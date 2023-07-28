@@ -1,0 +1,7 @@
+url 요청 -> urls.py -> 해당 앱의 urls.py
+
+views.py : 컨트롤러의 메소드를 모아놓은 느낌?
+models.py : VO, entity, 따로 설치없이 mybatis를 사용하는것 같음
+
+
+settings.py : build.gradle같은 느낌

@@ -1,0 +1,14 @@
+1. 장고앱 시작: 
+     python3 manage.py startapp {원하는 앱 이름}
+
+2. setting.py에 내가 생성한 장고앱 등록하기
+
+
+3. 장고에 sqlLite 설치
+    python3 manage.py migrate
+
+4. 장고앱에 생성한 모델 마이그래이션 파일 생성
+    python3 manage.py makemigrations {앱이름}
+
+5. 모델에 있는 것들 테이블 생성
+    python3 manage.py migrate {앱이름}
