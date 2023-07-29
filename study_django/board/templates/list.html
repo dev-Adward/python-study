@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>메인페이지</title>
+    <style>
+        li {
+            list-decoration : none;
+        }
+    </style>
+</head>
+<body>
+
+    <ul>  
+
+    </ul>
+
+
+</body>
+
+
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script type="text/javascript">
+    //전역변수..
+    let boards = {{boards | safe}}
+    console.log(boards)
+
+    let text = '';
+
+
+boards.forEach(board =>{
+    text += 
+    `
+            <li>제목 : ${board.title}</li>
+            <li>내용 : ${board.boardContent}</li>
+    `
+})
+
+    $('ul').append(text)
+
+
+  </script>
+</html>
