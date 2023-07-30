@@ -25,4 +25,5 @@ urlpatterns = [
     # include를 통해서 main 앱에 있는 url들을 모두 연결시켜준다.
     path('', include('main.urls')),
     path('board/', include('board.urls')),
+    path('api/', include('restPractice.urls')),
 ]
