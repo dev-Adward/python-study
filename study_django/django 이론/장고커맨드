@@ -12,3 +12,4 @@
 
 5. 모델에 있는 것들 테이블 생성
     python3 manage.py migrate {앱이름}
+
