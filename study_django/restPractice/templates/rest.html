@@ -4,13 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>restPage</title>
+    <style>
+    </style>
 </head>
 <body>
     <h1>REST페이지 입니다</h1>
+    <h3 class="info"></h3>
+    <div class="page-button"></div>
+
 </body>
 
 
 <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
 <script>
+    // jQuery를 사용하여 웹 API에 요청하는 함수
+let page = 1;
+let pageItems = 1;
+  function fetchData() {
+    $.ajax({
+      url: '/api/members',  // Django에서 설정한 URL
+      type: 'post',
+      dataType: 'json',
+        data: {"page":page, "pageItems":pageItems},
+      success: function(data) {
+        // 데이터를 받았을 때 실행할 코드
+        console.log(data);  // 데이터를 콘솔에 출력하거나 원하는 대로 활용
+          let buttonText = '';
+          let memberText = '';
+
+          data.data.forEach(member => {
+              memberText +=
+                  `
+                  <div class="name">${member.name}</div>
+                  <div class="name">${member.area}</div>
+                  `
+          })
+
+
+
+          data.data.forEach((object, i) => {
+              console.log(object)
+              buttonText +=
+                  `
+                    <button>${i+1}</button>
+                  `;
+
+          })
+          $('.info').append(memberText)
+          $('.page-button').append(buttonText)
+      },
+      error: function(error) {
+        // 에러 처리
+        console.error('Error fetching data:', error);
+      }
+    });
+  }
+  // fetchData 함수 호출
+  fetchData();
+
+
 </script>
 </html>
