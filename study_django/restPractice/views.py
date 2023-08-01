@@ -29,6 +29,12 @@ import openai
 class MemberAPI(APIView):
     def post(self, request):
         queryset = Member.objects.all()
+
+        # 장고에서 특정 데이터를 조회하는 메소드 사용
+        querysetFilter = Member.objects.filter(id=1)
+        # 장고가 가져온 객체의 특정 프로퍼티를 가져오는 방법
+        print(querysetFilter.values('name'))
+        print(querysetFilter.values_list('name'))
         # ajax로 데이터를 보냈을때 장고에서 데이터를 받는 방법
         # 메서드를 POST로 설정해놓으면 함수이름이 POST여도 request.POST로 받아야만한다.
         page = request.POST.get('page')
