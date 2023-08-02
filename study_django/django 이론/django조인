@@ -1,0 +1,5 @@
+selected_related()
+1대 1 관계에서 사용하거나 다대일 관계에서 사용
+
+prefetch_related()
+다대 일 관계에서 사용하거나 일대다 관계에서 사용
